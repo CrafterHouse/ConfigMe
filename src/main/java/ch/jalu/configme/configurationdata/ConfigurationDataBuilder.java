@@ -112,6 +112,7 @@ public class ConfigurationDataBuilder {
     protected @Nullable Property<?> getPropertyField(@NotNull Field field) {
         if (Property.class.isAssignableFrom(field.getType()) && Modifier.isStatic(field.getModifiers())) {
             try {
+                field.setAccessible(true);
                 return (Property<?>) field.get(null);
             } catch (IllegalAccessException e) {
                 throw new ConfigMeException("Could not fetch field '" + field.getName() + "' from class '"
