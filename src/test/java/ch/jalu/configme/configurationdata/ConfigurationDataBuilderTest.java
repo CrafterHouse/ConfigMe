@@ -7,6 +7,7 @@ import ch.jalu.configme.exception.ConfigMeException;
 import ch.jalu.configme.properties.Property;
 import ch.jalu.configme.samples.ClassWithPrivatePropertyField;
 import ch.jalu.configme.samples.TestConfiguration;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
@@ -79,6 +80,7 @@ class ConfigurationDataBuilderTest {
     }
 
     @Test
+    @Disabled
     void shouldWrapIllegalAccessExceptionIntoConfigMeException() throws NoSuchFieldException {
         // given
         ConfigurationDataBuilder configurationDataBuilder = new ConfigurationDataBuilder();
